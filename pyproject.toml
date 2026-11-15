@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,9 +8,26 @@ version = "0.1.0"
 description = "MCP tooling for game-engine work: a Spine 2D MCP server and a Godot MCP endpoint connector."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "Kurtlon Earl Sta. Ines" }]
 dependencies = ["mcp>=1.2,<2", "pillow>=10"]
+keywords = ["mcp", "model-context-protocol", "spine", "spine2d", "godot", "ai-agents", "game-dev"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Games/Entertainment",
+    "Topic :: Multimedia :: Graphics",
+]
+
+[project.urls]
+Homepage = "https://github.com/kurtstaines/engine-mcp"
+Issues = "https://github.com/kurtstaines/engine-mcp/issues"
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.6"]

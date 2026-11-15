@@ -1,14 +1,14 @@
 # engine-mcp
 
 [![CI](https://github.com/kurtstaines/engine-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/kurtstaines/engine-mcp/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/kurtstaines/engine-mcp/blob/main/LICENSE)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 
 **Let an AI agent drive the Spine 2D animation editor, and plug a Godot MCP endpoint into every AI client with one command.**
 
 Game-engine tools are built for hands on a mouse. `engine-mcp` exposes them over the [Model Context Protocol](https://modelcontextprotocol.io) so an agent can export, import, pack, repair and compose skeletal animation assets itself, and get back a structured result it can branch on instead of a wall of console text.
 
-![A real MCP client session: listing the 12 tools, composing a scene and importing it into a Spine project](docs/screenshots/demo-terminal.gif)
+![A real MCP client session: listing the 12 tools, composing a scene and importing it into a Spine project](https://raw.githubusercontent.com/kurtstaines/engine-mcp/main/docs/screenshots/demo-terminal.gif)
 
 *A real client session against the server: connect, list tools, compose two characters into one scene, import it into a Spine project.*
 
@@ -26,22 +26,28 @@ Status: **v0.1, early.** Small on purpose.
 ## Quickstart
 
 ```bash
+pip install engine-mcp
+engine-mcp-spine --selftest
+```
+
+To run the examples, work from a clone instead:
+
+```bash
 git clone https://github.com/kurtstaines/engine-mcp.git
 cd engine-mcp
 pip install -e .
-engine-mcp-spine --selftest
 python examples/compose_scene.py
 ```
 
 `--selftest` lists the registered tools and reports whether the Spine CLI was found. The example composes two characters into one scene with no Spine install needed.
 
-<img src="docs/screenshots/sample-rig.gif" alt="The sample character playing its idle, wave and cheer animations" width="300">
+<img src="https://raw.githubusercontent.com/kurtstaines/engine-mcp/main/docs/screenshots/sample-rig.gif" alt="The sample character playing its idle, wave and cheer animations" width="300">
 
 *The sample rig's `idle`, `wave` and `cheer` animations, recorded playing in the Spine editor.*
 
 ### The sample rig
 
-[examples/build_rig.py](examples/build_rig.py) turns one flat character image into a Spine skeleton:
+[examples/build_rig.py](https://github.com/kurtstaines/engine-mcp/blob/main/examples/build_rig.py) turns one flat character image into a Spine skeleton:
 
 - keys out the background and cuts the art into six parts (body, head, upper arms, forearms)
 - writes `examples/mecha.json` with seven bones and region attachments
@@ -49,7 +55,7 @@ python examples/compose_scene.py
 
 The cut lines and joint positions are hand-picked for this one image; it is an example, not a general auto-rigger. The source art was generated with Grok Imagine.
 
-![The sample rig open in the Spine editor](docs/screenshots/spine-editor.jpg)
+![The sample rig open in the Spine editor](https://raw.githubusercontent.com/kurtstaines/engine-mcp/main/docs/screenshots/spine-editor.jpg)
 
 *`examples/mecha.json` imported into a Spine project with `spine_import` and opened with `spine_open_editor`: seven bones, six image parts and three animations.*
 
@@ -76,7 +82,9 @@ claude mcp add spine -- engine-mcp-spine
 }
 ```
 
-If the client cannot find `engine-mcp-spine` on its `PATH` (common when you installed into a virtual environment), point `command` at that environment's Python and use `"args": ["-m", "engine_mcp.spine_server"]`. A copy of this config lives in [examples/mcp.json](examples/mcp.json).
+With [uv](https://docs.astral.sh/uv/) installed you can skip the install step and let the client fetch the package: set `"command": "uvx"` and `"args": ["--from", "engine-mcp", "engine-mcp-spine"]`.
+
+If the client cannot find `engine-mcp-spine` on its `PATH` (common when you installed into a virtual environment), point `command` at that environment's Python and use `"args": ["-m", "engine_mcp.spine_server"]`. A copy of this config lives in [examples/mcp.json](https://github.com/kurtstaines/engine-mcp/blob/main/examples/mcp.json).
 
 | Variable | Purpose |
 |---|---|
@@ -140,7 +148,7 @@ flowchart LR
     client -. "HTTP, after connect" .-> godot
 ```
 
-The server is a thin layer: each tool is one call into `spine_core`, which you can also import directly from a script (see [examples/compose_scene.py](examples/compose_scene.py)).
+The server is a thin layer: each tool is one call into `spine_core`, which you can also import directly from a script (see [examples/compose_scene.py](https://github.com/kurtstaines/engine-mcp/blob/main/examples/compose_scene.py)).
 
 ## Tests
 
@@ -171,4 +179,4 @@ Keep tools returning the `{"ok": bool, ...}` contract, and add a test for anythi
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](https://github.com/kurtstaines/engine-mcp/blob/main/LICENSE).
