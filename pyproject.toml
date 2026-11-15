@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "engine-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP tooling for game-engine work: a Spine 2D MCP server and a Godot MCP endpoint connector."
 readme = "README.md"
 requires-python = ">=3.10"
