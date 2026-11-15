@@ -1,5 +1,7 @@
 # engine-mcp
 
+English | [日本語](https://github.com/kurtstaines/engine-mcp/blob/main/README.ja.md)
+
 [![CI](https://github.com/kurtstaines/engine-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/kurtstaines/engine-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/kurtstaines/engine-mcp/blob/main/LICENSE)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
