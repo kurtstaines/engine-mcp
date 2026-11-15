@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "spine": {
+      "command": "engine-mcp-spine",
+      "env": { "SPINE_EXE": "C:/Program Files/Spine/Spine.com" }
+    }
+  }
+}

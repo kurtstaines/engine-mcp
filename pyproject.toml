@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "engine-mcp"
+version = "0.1.0"
+description = "MCP tooling for game-engine work: a Spine 2D MCP server and a Godot MCP endpoint connector."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kurtlon Earl Sta. Ines" }]
+dependencies = ["mcp>=1.2,<2", "pillow>=10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+engine-mcp-spine = "engine_mcp.spine_server:main"
+engine-mcp-godot = "engine_mcp.godot_connect:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
