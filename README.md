@@ -10,6 +10,10 @@ English | [日本語](https://github.com/kurtstaines/engine-mcp/blob/main/README
 
 **Let an AI agent drive the Spine 2D animation editor, and plug a Godot MCP endpoint into every AI client with one command.**
 
+![engine-mcp demo](https://raw.githubusercontent.com/kurtstaines/engine-mcp/main/docs/screenshots/demo-overview.gif)
+
+*Two real recordings side by side: an MCP client listing the tools and composing a scene, and the imported sample rig playing in Spine.*
+
 Game-engine tools are built for hands on a mouse. `engine-mcp` exposes them over the [Model Context Protocol](https://modelcontextprotocol.io) so an agent can export, import, pack, repair and compose skeletal animation assets itself, and get back a structured result it can branch on instead of a wall of console text.
 
 ![A real MCP client session: listing the 12 tools, composing a scene and importing it into a Spine project](https://raw.githubusercontent.com/kurtstaines/engine-mcp/main/docs/screenshots/demo-terminal.gif)

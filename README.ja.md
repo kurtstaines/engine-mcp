@@ -10,6 +10,8 @@
 
 **AI エージェントに Spine 2D アニメーションエディタを操作させ、Godot の MCP エンドポイントをコマンド一つであらゆる AI クライアントに接続します。**
 
+![engine-mcp demo](https://raw.githubusercontent.com/kurtstaines/engine-mcp/main/docs/screenshots/demo-overview.gif)
+
 ゲームエンジンのツールは、マウスを握る人の手を前提に作られています。`engine-mcp` はそれらを [Model Context Protocol](https://modelcontextprotocol.io)（MCP）経由で公開し、エージェント自身がスケルタルアニメーション素材のエクスポート、インポート、パック、修復、合成を行えるようにします。結果は大量のコンソール出力ではなく構造化データで返るため、エージェントはそれを見て次の処理を判断できます。
 
 ![実際の MCP クライアントのセッション：12 個のツールの一覧表示、シーンの合成、Spine プロジェクトへのインポート](https://raw.githubusercontent.com/kurtstaines/engine-mcp/main/docs/screenshots/demo-terminal.gif)
